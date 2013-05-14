@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade" group="content">
+	<name>Joomla BX Sliders</name>
+	<author>Samundra Shrestha</author>
+	<creationDate>May 2013</creationDate>
+	<copyright>Copyright (C) 2013 www.samundra.com.np</copyright>
+	<license>GNU/GPL v1.0</license>
+	<authorEmail>samundra.shr@gmail.com</authorEmail>
+	<authorUrl>www.samundra.com.np</authorUrl>
+	<version>1.0.0</version>
+	<description><![CDATA[
+	<h1>Joomla Bx Slideshow</h1>
+    <div style="margin:0 0 0 10px; font-size:15px;">This module is also available in github.<a href="http://www.github.com/" target="_blank">Github Link</a>;
+	<br/> Based on the BX slider by wandoledzep. Github url is <a href="https://github.com/wandoledzep/bxslider-4/" target="_blank">BX Content Slider</a> page.</div><br/>
+	<br/>
+	]]></description>
+	
+	<files>
+		<filename module="mod_bx_sliders">mod_bx_sliders.php</filename>
+		<folder>tmpl</folder>
+		<folder>assets</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_bx_sliders.xml</filename>
+	</files>
+	
+    <languages>
+		<language tag="en-GB">en-GB.mod_bx_sliders.ini</language>
+	</languages>
+    
+	<config>
+		<fields name="params">
+          
+		<fieldset name="basic">
+			<field name="jQuery" 
+            type="list" default="1" 
+            label="jQuery" 
+            description="MOD_BX_SLIDERS_JQUERY_DESC">
+				<option value="1">jQuery 1.7.1 (Load localy)</option>
+				<option value="2">jQuery Latest Version</option>
+				<option value="3">Disable jQuery Plugin</option>
+			</field>
+			
+            <field name="jQueryEasing" 
+            type="list" default="1" 
+            label="MOD_BX_SLIDER_JQUERY_EASING_LABEL" 
+            description="MOD_BX_SLIDER_JQUERY_EASING_DESC">
+				<option value="1">Yes</option>
+				<option value="2">No</option>
+			</field>
+
+			<field 
+            name="imgWidth" 
+            type="text" 
+            default="940" 
+            label="MOD_BX_SLIDER_SLIDESHOW_WIDTH_LABEL" 
+            description="MOD_BX_SLIDER_WIDTH_DESC" />
+			
+            <field 
+            name="imgHeight" 
+            type="text" 
+            default="400" 
+            label="MOD_BX_SLIDER_SLIDESHOW_HEIGHT_LABEL" 
+            description="MOD_BX_SLIDER_HEIGHT_DESC" />		
+			
+			<field 
+            type="spacer" 
+            name="MOD_BX_SLIDERS_SPACER_NAME" />
+			
+            <field 
+            name="BgPosition" 
+            type="text" 
+            default="100" 
+            label="MOD_BX_SLIDER_BG_LABEL" 
+            description="MOD_BX_SLIDER_BG_DESC" />	
+			
+            <field 
+            name="Autoplay" 
+            type="list" 
+            default="true" 
+            label="MOD_BX_SLIDER_AUTOPLAY_LABEL" 
+            description="MOD_BX_SLIDER_AUTOPLAY_DESC">
+				<option value="true">Yes</option>
+				<option value="false">No</option>
+			</field>		
+			<field 
+            name="Interval" 
+            type="text" 
+            default="4000" 
+            label="MOD_BX_SLIDER_SLIDE_INTERVAL_LABEL" 
+            description="MOD_BX_SLIDER_SLIDE_INTERVAL_DESC" />
+		</fieldset>
+        
+        <fieldset 
+        name="slideoptions"
+        label="MOD_BX_SLIDER_SLIDESHOW_OPTIONS_FIELDSET_LABEL">
+          <field name="bx_speed" 
+            type="text" 
+            default="1000" 
+            label="MOD_BX_SLIDER_SLIDESHOW_SPEED_LABEL" 
+            description="MOD_BX_SLIDER_SLIDESHOW_SPEED_DESC">			
+			</field>
+            
+          <field name="bx_mode" 
+            type="list" 
+            default="horizontal" 
+            label="MOD_BX_SLIDER_SLIDESHOW_MODE_LABEL" 
+            description="MOD_BX_SLIDER_SLIDESHOW_MODE_DESC">			
+              <option value='horizontal'>Horizontal</option>
+              <option value='vertical'>Vertical</option>
+              <option value='fade'>Fade</option>
+			</field>
+            
+          <field name="bx_slide_selector" 
+            type="text" 
+            default="" 
+            label="MOD_BX_SLIDER_SLIDESHOW_SELECTOR_LABEL" 
+            description="MOD_BX_SLIDER_SLIDESHOW_SELECTOR_DESC">			
+			</field>
+            
+          <field name="bx_pause" 
+            type="text" 
+            default="4000" 
+            label="MOD_BX_SLIDER_PAUSE_LABEL" 
+            description="MOD_BX_SLIDER_PAUSE_DESC">			
+			</field>
+            
+          <field name="bx_auto" 
+            type="list" 
+            default="1" 
+            label="MOD_BX_SLIDER_AUTO_LABEL" 
+            description="MOD_BX_SLIDER_AUTO_DESC">			
+              <option value='1'>Yes</option>
+              <option value='0'>No</option>
+			</field>
+            
+          <field name="bx_autohover" 
+            type="list" 
+            default="1" 
+            label="MOD_BX_SLIDER_AUTOHOVER_LABEL" 
+            description="MOD_BX_SLIDER_AUTOHOVER_DESC">			
+              <option value='1'>Yes</option>
+              <option value='0'>No</option>
+			</field>
+            
+          <field name="bx_randomstart" 
+            type="list" 
+            default="0" 
+            label="MOD_BX_SLIDER_RANDOMSTART_LABEL" 
+            description="MOD_BX_SLIDER_RANDOMSTART_DESC">			
+              <option value='1'>Yes</option>
+              <option value='0'>No</option>
+			</field>
+            
+          <field name="bx_infiniteloop" 
+            type="list" 
+            default="1" 
+            label="MOD_BX_SLIDER_INIFINITELOOP_LABEL" 
+            description="MOD_BX_SLIDER_INIFINITELOOP_DESC">			
+              <option value='1'>Yes</option>
+              <option value='0'>No</option>
+			</field>
+            
+          <field name="bx_ticker" 
+            type="list" 
+            default="0" 
+            label="MOD_BX_SLIDER_TICKER_LABEL" 
+            description="MOD_BX_SLIDER_TICKER_DESC">			
+              <option value='1'>Yes</option>
+              <option value='0'>No</option>
+			</field>
+            
+          <field name="bx_tickerhover" 
+            type="list" 
+            default="0" 
+            label="MOD_BX_SLIDER_TICKERHOVER_LABEL" 
+            description="MOD_BX_SLIDER_TICKERHOVER_DESC">			
+              <option value='1'>Yes</option>
+              <option value='0'>No</option>
+			</field>
+            
+          <field name="bx_adaptiveheight" 
+            type="list" 
+            default="0" 
+            label="MOD_BX_SLIDER_ADAPTIVEHEIGHT_LABEL" 
+            description="MOD_BX_SLIDER_ADAPTIVEHEIGHT_DESC">			
+              <option value='1'>Yes</option>
+              <option value='0'>No</option>
+			</field>
+            
+          <field name="bx_video" 
+            type="list" 
+            default="0" 
+            label="MOD_BX_SLIDER_VIDEO_LABEL" 
+            description="MOD_BX_SLIDER_VIDEO_DESC">			
+              <option value='1'>Yes</option>
+              <option value='0'>No</option>
+			</field>
+            
+          <field name="bx_preloadimages" 
+            type="list" 
+            default="visible" 
+            label="MOD_BX_SLIDER_PRELOADIMAGES_LABEL" 
+            description="MOD_BX_SLIDER_PRELOADIMAGES_DESC">			
+              <option value='all'>All</option>
+              <option value='visible'>Visible</option>
+			</field>
+            
+          <field name="bx_pager" 
+            type="list" 
+            default="1" 
+            label="MOD_BX_SLIDER_PAGER_LABEL" 
+            description="MOD_BX_SLIDER_PAGER_DESC">			
+              <option value='1'>Yes</option>
+              <option value='0'>No</option>
+			</field>
+            
+          <field name="bx_pagertype" 
+            type="list" 
+            default="full" 
+            label="MOD_BX_SLIDER_PAGERTYPE_LABEL" 
+            description="MOD_BX_SLIDER_PAGERTYPE_DESC">			
+              <option value='full'>Full</option>
+              <option value='short'>Short</option>
+			</field>
+            
+          <field name="bx_pagerseparator" 
+            type="text" 
+            default="/" 
+            label="MOD_BX_SLIDER_PAGERSEPARATOR_LABEL" 
+            description="MOD_BX_SLIDER_PAGERSEPARATOR_DESC">			
+			</field>
+            
+        </fieldset>
+			
+		<fieldset 
+        name="slide_1" 
+        label="Slide 1">
+			<field
+              name="Image1" 
+              type="media" 
+              label="MOD_BX_SLIDER_IMAGE_LABEL" 
+              description="MOD_BX_SLIDER_IMAGE_DESC" />		
+			<field 
+            name="Title1" 
+            type="text" 
+            default="" 
+            label="MOD_BX_SLIDER_SLIDE_LABEL" 
+            description="MOD_BX_SLIDER_SLIDE_DESC" />
+			
+            <field 
+            name="Text1" 
+            type="textarea"
+            filter="safehtml" 
+            cols="60" 
+            rows="5"
+            default=""
+            label="MOD_BX_SLIDER_SLIDE_TEXT_LABEL" 
+            description="MOD_BX_SLIDER_SLIDE_DESC_HTML" />			
+			<field 
+            name="Link1" 
+            type="text" default="" 
+            label="MOD_BX_SLIDER_SLIDE_READMORE_LABEL" 
+            description="MOD_BOX_SLIDER_READMORE_DESC" />
+		</fieldset>
+		
+		<fieldset name="slide_2" label="Slide 2">
+			<field name="Image2" type="media" label="MOD_BX_SLIDER_IMAGE_LABEL" description="MOD_BX_SLIDER_IMAGE_DESC" />		
+			<field name="Title2" type="text" default="" label="MOD_BX_SLIDER_SLIDE_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC" />
+			<field name="Text2" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="MOD_BX_SLIDER_SLIDE_TEXT_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC_HTML" />			
+			<field name="Link2" type="text" default="" label="MOD_BX_SLIDER_SLIDE_READMORE_LABEL" description="MOD_BOX_SLIDER_READMORE_DESC" />					
+		</fieldset>
+		
+		<fieldset name="slide_3" label="Slide 3">
+			<field name="Image3" type="media" label="MOD_BX_SLIDER_IMAGE_LABEL" description="MOD_BX_SLIDER_IMAGE_DESC" />		
+			<field name="Title3" type="text" default="" label="MOD_BX_SLIDER_SLIDE_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC" />
+			<field name="Text3" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="MOD_BX_SLIDER_SLIDE_TEXT_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC_HTML" />			
+			<field name="Link3" type="text" default="" label="MOD_BX_SLIDER_SLIDE_READMORE_LABEL" description="MOD_BOX_SLIDER_READMORE_DESC" />					
+		</fieldset>
+		
+		<fieldset name="slide_4" label="Slide 4">
+			<field name="Image4" type="media" label="MOD_BX_SLIDER_IMAGE_LABEL" description="MOD_BX_SLIDER_IMAGE_DESC" />		
+			<field name="Title4" type="text" default="" label="MOD_BX_SLIDER_SLIDE_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC" />
+			<field name="Text4" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="MOD_BX_SLIDER_SLIDE_TEXT_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC_HTML" />			
+			<field name="Link4" type="text" default="" label="MOD_BX_SLIDER_SLIDE_READMORE_LABEL" description="MOD_BOX_SLIDER_READMORE_DESC" />					
+		</fieldset>
+		
+		<fieldset name="slide_5" label="Slide 5">
+			<field name="Image5" type="media" label="MOD_BX_SLIDER_IMAGE_LABEL" description="MOD_BX_SLIDER_IMAGE_DESC" />		
+			<field name="Title5" type="text" default="" label="MOD_BX_SLIDER_SLIDE_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC" />
+			<field name="Text5" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="MOD_BX_SLIDER_SLIDE_TEXT_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC_HTML" />			
+			<field name="Link5" type="text" default="" label="MOD_BX_SLIDER_SLIDE_READMORE_LABEL" description="MOD_BOX_SLIDER_READMORE_DESC" />							
+		</fieldset>
+		
+		<fieldset name="slide_6" label="Slide 6">
+			<field name="Image6" type="media" label="MOD_BX_SLIDER_IMAGE_LABEL" description="MOD_BX_SLIDER_IMAGE_DESC" />		
+			<field name="Title6" type="text" default="" label="MOD_BX_SLIDER_SLIDE_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC" />
+			<field name="Text6" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="MOD_BX_SLIDER_SLIDE_TEXT_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC_HTML" />			
+			<field name="Link6" type="text" default="" label="MOD_BX_SLIDER_SLIDE_READMORE_LABEL" description="MOD_BOX_SLIDER_READMORE_DESC" />						
+		</fieldset>	
+		
+		<fieldset name="slide_7" label="Slide 7">
+			<field name="Image7" type="media" label="MOD_BX_SLIDER_IMAGE_LABEL" description="MOD_BX_SLIDER_IMAGE_DESC" />		
+			<field name="Title7" type="text" default="" label="MOD_BX_SLIDER_SLIDE_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC" />
+			<field name="Text7" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="MOD_BX_SLIDER_SLIDE_TEXT_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC_HTML" />			
+			<field name="Link7" type="text" default="" label="MOD_BX_SLIDER_SLIDE_READMORE_LABEL" description="MOD_BOX_SLIDER_READMORE_DESC" />							
+		</fieldset>			
+		
+		<fieldset name="slide_8" label="Slide 8">
+			<field name="Image8" type="media" label="MOD_BX_SLIDER_IMAGE_LABEL" description="MOD_BX_SLIDER_IMAGE_DESC" />		
+			<field name="Title8" type="text" default="" label="MOD_BX_SLIDER_SLIDE_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC" />
+			<field name="Text8" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="MOD_BX_SLIDER_SLIDE_TEXT_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC_HTML" />			
+			<field name="Link8" type="text" default="" label="MOD_BX_SLIDER_SLIDE_READMORE_LABEL" description="MOD_BOX_SLIDER_READMORE_DESC" />						
+		</fieldset>
+		
+		<fieldset name="slide_9" label="Slide 9">
+			<field name="Image9" type="media" label="MOD_BX_SLIDER_IMAGE_LABEL" description="MOD_BX_SLIDER_IMAGE_DESC" />		
+			<field name="Title9" type="text" default="" label="MOD_BX_SLIDER_SLIDE_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC" />
+			<field name="Text9" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="MOD_BX_SLIDER_SLIDE_TEXT_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC_HTML" />			
+			<field name="Link9" type="text" default="" label="MOD_BX_SLIDER_SLIDE_READMORE_LABEL" description="MOD_BOX_SLIDER_READMORE_DESC" />						
+		</fieldset>
+		
+		<fieldset name="slide_10" label="Slide 10">
+			<field name="Image10" type="media" label="MOD_BX_SLIDER_IMAGE_LABEL" description="MOD_BX_SLIDER_IMAGE_DESC" />		
+			<field name="Title10" type="text" default="" label="MOD_BX_SLIDER_SLIDE_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC" />
+			<field name="Text10" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="MOD_BX_SLIDER_SLIDE_TEXT_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC_HTML" />			
+			<field name="Link10" type="text" default="" label="MOD_BX_SLIDER_SLIDE_READMORE_LABEL" description="MOD_BOX_SLIDER_READMORE_DESC" />					
+		</fieldset>	
+		
+		<fieldset name="slide_11" label="Slide 11">
+			<field name="Image11" type="media" label="MOD_BX_SLIDER_IMAGE_LABEL" description="MOD_BX_SLIDER_IMAGE_DESC" />		
+			<field name="Title11" type="text" default="" label="MOD_BX_SLIDER_SLIDE_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC" />
+			<field name="Text11" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="MOD_BX_SLIDER_SLIDE_TEXT_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC_HTML" />			
+			<field name="Link11" type="text" default="" label="MOD_BX_SLIDER_SLIDE_READMORE_LABEL" description="MOD_BOX_SLIDER_READMORE_DESC" />						
+		</fieldset>
+		
+		<fieldset name="slide_12" label="Slide 12">
+			<field name="Image12" type="media" label="MOD_BX_SLIDER_IMAGE_LABEL" description="MOD_BX_SLIDER_IMAGE_DESC" />		
+			<field name="Title12" type="text" default="" label="MOD_BX_SLIDER_SLIDE_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC" />
+			<field name="Text12" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="MOD_BX_SLIDER_SLIDE_TEXT_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC_HTML" />			
+			<field name="Link12" type="text" default="" label="MOD_BX_SLIDER_SLIDE_READMORE_LABEL" description="MOD_BOX_SLIDER_READMORE_DESC" />							
+		</fieldset>	
+		
+		<fieldset name="slide_13" label="Slide 13">
+			<field name="Image13" type="media" label="MOD_BX_SLIDER_IMAGE_LABEL" description="MOD_BX_SLIDER_IMAGE_DESC" />		
+			<field name="Title13" type="text" default="" label="MOD_BX_SLIDER_SLIDE_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC" />
+			<field name="Text13" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="MOD_BX_SLIDER_SLIDE_TEXT_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC_HTML" />			
+			<field name="Link13" type="text" default="" label="MOD_BX_SLIDER_SLIDE_READMORE_LABEL" description="MOD_BOX_SLIDER_READMORE_DESC" />						
+		</fieldset>	
+		
+		<fieldset name="slide_14" label="Slide 14">
+			<field name="Image14" type="media" label="MOD_BX_SLIDER_IMAGE_LABEL" description="MOD_BX_SLIDER_IMAGE_DESC" />		
+			<field name="Title14" type="text" default="" label="MOD_BX_SLIDER_SLIDE_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC" />
+			<field name="Text14" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="MOD_BX_SLIDER_SLIDE_TEXT_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC_HTML" />			
+			<field name="Link14" type="text" default="" label="MOD_BX_SLIDER_SLIDE_READMORE_LABEL" description="MOD_BOX_SLIDER_READMORE_DESC" />						
+		</fieldset>	
+		
+		<fieldset name="slide_15" label="Slide 15">
+			<field name="Image15" type="media" label="MOD_BX_SLIDER_IMAGE_LABEL" description="MOD_BX_SLIDER_IMAGE_DESC" />		
+			<field name="Title15" type="text" default="" label="MOD_BX_SLIDER_SLIDE_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC" />
+			<field name="Text15" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="MOD_BX_SLIDER_SLIDE_TEXT_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC_HTML" />			
+			<field name="Link15" type="text" default="" label="MOD_BX_SLIDER_SLIDE_READMORE_LABEL" description="MOD_BOX_SLIDER_READMORE_DESC" />						
+		</fieldset>	
+		
+		<fieldset name="slide_16" label="Slide 16">
+			<field name="Image16" type="media" label="MOD_BX_SLIDER_IMAGE_LABEL" description="MOD_BX_SLIDER_IMAGE_DESC" />		
+			<field name="Title16" type="text" default="" label="MOD_BX_SLIDER_SLIDE_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC" />
+			<field name="Text16" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="MOD_BX_SLIDER_SLIDE_TEXT_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC_HTML" />			
+			<field name="Link16" type="text" default="" label="MOD_BX_SLIDER_SLIDE_READMORE_LABEL" description="MOD_BOX_SLIDER_READMORE_DESC" />							
+		</fieldset>	
+		
+		<fieldset name="slide_17" label="Slide 17">
+			<field name="Image17" type="media" label="MOD_BX_SLIDER_IMAGE_LABEL" description="MOD_BX_SLIDER_IMAGE_DESC" />		
+			<field name="Title17" type="text" default="" label="MOD_BX_SLIDER_SLIDE_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC" />
+			<field name="Text17" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="MOD_BX_SLIDER_SLIDE_TEXT_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC_HTML" />			
+			<field name="Link17" type="text" default="" label="MOD_BX_SLIDER_SLIDE_READMORE_LABEL" description="MOD_BOX_SLIDER_READMORE_DESC" />						
+		</fieldset>
+		
+		<fieldset name="slide_18" label="Slide 18">
+			<field name="Image18" type="media" label="MOD_BX_SLIDER_IMAGE_LABEL" description="MOD_BX_SLIDER_IMAGE_DESC" />		
+			<field name="Title18" type="text" default="" label="MOD_BX_SLIDER_SLIDE_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC" />
+			<field name="Text18" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="MOD_BX_SLIDER_SLIDE_TEXT_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC_HTML" />			
+			<field name="Link18" type="text" default="" label="MOD_BX_SLIDER_SLIDE_READMORE_LABEL" description="MOD_BOX_SLIDER_READMORE_DESC" />						
+		</fieldset>	
+		
+		<fieldset name="slide_19" label="Slide 19">
+			<field name="Image19" type="media" label="MOD_BX_SLIDER_IMAGE_LABEL" description="MOD_BX_SLIDER_IMAGE_DESC" />		
+			<field name="Title19" type="text" default="" label="MOD_BX_SLIDER_SLIDE_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC" />
+			<field name="Text19" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="MOD_BX_SLIDER_SLIDE_TEXT_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC_HTML" />			
+			<field name="Link19" type="text" default="" label="MOD_BX_SLIDER_SLIDE_READMORE_LABEL" description="MOD_BOX_SLIDER_READMORE_DESC" />						
+		</fieldset>
+
+		<fieldset name="slide_20" label="Slide 20">
+			<field name="Image20" type="media" label="MOD_BX_SLIDER_IMAGE_LABEL" description="MOD_BX_SLIDER_IMAGE_DESC" />		
+			<field name="Title20" type="text" default="" label="MOD_BX_SLIDER_SLIDE_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC" />
+			<field name="Text20" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="MOD_BX_SLIDER_SLIDE_TEXT_LABEL" description="MOD_BX_SLIDER_SLIDE_DESC_HTML" />			
+			<field name="Link20" type="text" default="" label="MOD_BX_SLIDER_SLIDE_READMORE_LABEL" description="MOD_BOX_SLIDER_READMORE_DESC" />						
+		</fieldset>						
+	</fields>
+	</config>
+</extension>
