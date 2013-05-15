@@ -4,8 +4,8 @@
 defined('_JEXEC') or die;
 
 // Include the syndicate functions only once
-require_once dirname(__FILE__) . '/helper.php';
-$list = modBxSlidersHelper::getList($params);
+//require_once dirname(__FILE__) . '/helper.php';
+//$list = modBxSlidersHelper::getList($params);
 
 $jQuery = $params->get("jQuery");
 
